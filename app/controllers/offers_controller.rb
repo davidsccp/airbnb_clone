@@ -30,21 +30,6 @@ class OffersController < ApplicationController
     end
   end
 
-  def update
-    urls = JSON.parse params[:offer][:urls]
-    urls.each do |url|
-      if !@offer.urls.include?(url)
-        @offer.urls << url
-      end
-    end
-    if @offer.update(offer_params)
-      redirect_to edit_offer_path(@offer)
-      flash[:notice] = "Your offer was updated successfully..."
-    else
-      render 'edit'
-    end
-  end
-
   def destroy
     @offer.destroy
     flash[:notice] = "Your offer was removed successfully"
