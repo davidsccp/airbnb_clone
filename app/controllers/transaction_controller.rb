@@ -32,7 +32,7 @@ class TransactionController < ApplicationController
         email: current_user.email,
         source: params[:stripeToken],
       })
-      
+
       charge = Stripe::Charge.create({
         user: user.id,
         amount: @amount.to_i,
@@ -44,7 +44,7 @@ class TransactionController < ApplicationController
     end
 
     if charge_error
-      @reservation.destroy
+      @transaction.destroy
       flash[:alert] = charge_error
       redirect_to offer_path(@offer)
     else
