@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
   belongs_to :user
-  has_many :transaction
+  has_many :transactions
 
   validates :address, :price, :description, :capacity, :title, presence: true
 

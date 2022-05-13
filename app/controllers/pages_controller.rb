@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @location = params[:location]
+    @address = params[:address]
     @checkin = params[:checkin]
     @checkout = params[:checkout]
     @guests = params[:guests] || 1
@@ -13,6 +13,7 @@ class PagesController < ApplicationController
      #  @rooms = Rooms.all
 end
 
+end
 
 
 

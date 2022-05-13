@@ -64,6 +64,6 @@ class TransactionController < ApplicationController
   private
 
   def transaction_params
-    params.require(:reservation).permit(:start_date, :end_date, :price, :total, :offer_id, :nights)
+    params.require(:transaction).permit(:start_date, :end_date, :price, :total, :offer_id, :nights)
   end
 end
