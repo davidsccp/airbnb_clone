@@ -2,16 +2,21 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :destroy,]
   before_action :authenticate_user!, except: [:index]
 
+
   def index
-    @offers = current_user.offers.all
+    @offers = policy_scope(Offer).order(created_at: :desc)
   end
 
   def new
-    @offer = current_user.offers.build
+    # @offer = current_user.offers.build
+    @offer = Offer.new
+    authorize @offer
+    # return true
   end
 
   def create
     @offer = current_user.offers.build(offer_params)
+    authorize @offer
     if @offer.save
       flash[:notice] = "Your offer was successfully created"
       redirect_to root_path
@@ -21,6 +26,7 @@ class OffersController < ApplicationController
   end
 
   def show
+    authorize @offer
   end
 
   # def edit
@@ -31,6 +37,7 @@ class OffersController < ApplicationController
   # end
 
   def destroy
+    authorize @offer
     @offer.destroy
     flash[:notice] = "Your offer was removed successfully"
     redirect_to offers_path

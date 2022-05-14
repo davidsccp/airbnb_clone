@@ -1,0 +1,17 @@
+<%= form_for(@offer) do |f| %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :address %>
+  <%= f.number_field :address %>
+  <%= f.label :capacity %>
+  <%= f.number_field :capacity %>
+  <%= f.label :title %>
+  <%= f.number_field :title %>
+  <%= f.label :state %>
+  <%= f.number_field :state %>
+  <%= f.label :city %>
+  <%= f.number_field :city %>
+  <%= f.submit %>
+<% end %>
