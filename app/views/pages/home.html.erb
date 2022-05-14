@@ -1,2 +1,121 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper">
+  <div class="container is-fluid">
+    <% form_tag(search_path, method: :get, id: "laptop-form", class: "mr-5 ml-5", autocomplete: "off") do %>
+      <div class="formFields">
+        <div class="columns is-gapless is-moblie">
+          <div class="searchLabel"> Location </label>
+          <% text_field_tag(:location, params[:search], class: "searchInput", placeholder: "Where do you want to go?", id:"autocomplete_address", required: true)%>
+          </div>
+          </div>
+          <div class="breakDiv"></div>
+          <div class="column is-one-fifths is-relative">
+            <div class="searchDiv">
+              <button class="btn dateBtn" type="button">
+                <label class="searchLabel"> Check in</label>
+                <input type="text" class="searchInput" id="checkin" placeholder="Choose dates" onfocus="(this.type='date')" required>
+                <%= hidden_field_tag(:checkin, params[:checkin], id: "setCheckin") %>
+              </button>
+            </div>
+            <div class="tag is-danger is-light" id="checkin-error"> Please select a date</div>
+          </div>
+          <div class="breakDiv"></div>
+          <div class="cloumn is-one-fifths is-relative">
+            <div class="searchDiv">
+              <button class="btn dateBtn" type="button">
+                <label class="searchLabel"> Check Out</label>
+                <input type="text" class="searchInput" id="checkout" placeholder="Add dates" onfocus="(this.type='date')" required>
+                <%= hidden_field_tag(:checkout, params[:checkout], id: "setCheckout") %>
+              </button>
+            </div>
+            <div class="tag is-danger is-light" id="checkout-error"> Please select a valid date</div>
+          </div>
+          <div class="breakDiv"></div>
+          <div class="column is-one-fifths">
+           <div class="searchDiv">
+            <button class="btn" type="button" id="showGuest">
+              <label class="searchLabel">Guests</label>
+              <label class="checkin"id="guests"> Add Guest</label>
+              <%= hidden_field_tag(:guests, params[:guests], id: "setGuests") %>
+              </button>
+            </div>
+            <div class="guestCard">
+              <div class="is-flex is-justify-content-space-between is-align-items-center">
+                <label class="is-size-6 has-text-weight-semibold">Add Guests</label>
+                <span class="is-flex is-align-items-center">
+                  <button id="minus"><i class="fa fa-minus-circle mr-1"></i></button>
+                  <label id="numberGuest" class="is-size-6 has-text-weight-bold" id="guest">0</label>
+                  <button id="plus"><i class="fa fa-plus-circle ml-1"></i></button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="breakDiv"></div>
+          <div class="column is-one-fifths">
+            <div class="searchDiv">
+              <%= button_tag(type: "submit", class: "searchBtn", style: "margin-left: 2.5vh;") do %>
+                <i class="fa fa-search mr-1"></i>Search
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%=  form_tag(search_path, method: :get, id: "mobile-form", autocomplete: "off") do %>
+      <div class="field">
+        <p class="control has-icons-left">
+        <%= text_field_tag(:location, params[:search], class: "input is-rounded is-medium", placeholder: "Where are you going?", id:"autocomplete_address", required: true) %>
+          <span class="icon is-left">
+            <img src="https://img.icons8.com/ios/25/000000/search--v1.png"/>
+          </span>
+        </p>
+      </div>
+    <% end %>
+    <div class="home">
+      <div class="columns is-mobile">
+        <div class="column is-half-widescreen is-full-mobile is-three-quarters-desktop">
+          <h1 class="mainText mb-1">Welcome to Le AirBnb.</h1>
+        </div>
+        <div class="column"></div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <%#= image_tag("image1.webp", class: "img") %>
+              <h1>A imagem vem aqui</h1>
+            </div>
+            <div class="card-content">
+              <h2 class="title is-5">Online Experiences</h2>
+              <p class="subtitle is-6">Designed and led by locals all over the world.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <%#= image_tag("image2.webp", class: "img") %>
+              <h1>A imagem vem aqui</h1>
+            </div>
+            <div class="card-content">
+              <h2 class="title is-5">Your next place</h2>
+              <p class="subtitle is-6">Go on a trip that’s just a short drive away.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <%#= image_tag("image3.webp", class: "img") %>
+              <h1>A imagem vem aqui</h1>
+            </div>
+            <div class="card-content">
+              <h2 class="title is-5">Entire homes</h2>
+              <p class="subtitle is-6">Comfortable unique private places.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%#= javascript_pack_tag "home" %>
