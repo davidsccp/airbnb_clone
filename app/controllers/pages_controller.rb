@@ -1,10 +1,13 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
 
-  def index
+  def home
   end
 
   def search
     @address = params[:address]
+    @state = params[:state]
+    @city = params[:city]
     @checkin = params[:checkin]
     @checkout = params[:checkout]
     @guests = params[:guests] || 1
