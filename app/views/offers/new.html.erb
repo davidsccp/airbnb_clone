@@ -1,17 +1,21 @@
-<%= form_for(@offer) do |f| %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :address %>
-  <%= f.number_field :address %>
-  <%= f.label :capacity %>
-  <%= f.number_field :capacity %>
-  <%= f.label :title %>
-  <%= f.number_field :title %>
-  <%= f.label :state %>
-  <%= f.number_field :state %>
-  <%= f.label :city %>
-  <%= f.number_field :city %>
-  <%= f.submit %>
-<% end %>
+<h2 class="text-center">Share your <strong id="red-word">House or Apartment</strong>.</h2>
+
+<div id="wrapper">
+  <div class="row">
+    <div class="text-left form-login">
+      <h2 class="text-center"><strong>Add my Bed </strong></h2>
+      <br>
+      <%= simple_form_for @offer do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :description, placeholder: "Warm bed with silk sheets", :label_html => { :class => "label-css"} %>
+      <%= f.input :address, label: "My House or Apartment is located at this address", placeholder: "Avenida Paulista 123" %>
+      <%= f.input :city, placeholder: "São Paulo" %>
+      <%= f.input :state, priority: ["SP"] %>
+      <%= f.input :price, label: "Price per night in BRL", placeholder: "150" %>
+      <%= f.button :submit, "Share my House/Apartment", class: "btn btn-danger btn-lg"%>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+</div>
