@@ -29,6 +29,19 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
+  def edit
+    authorize @offer
+  end
+
+  def update
+    authorize @offer
+    if @offer.update(offer_params)
+      redirect_to @offer, notice: 'Offer was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   # def edit
   #   if current_user.id != @offer.user.id
   #     redirect_to root_path
@@ -42,7 +55,6 @@ class OffersController < ApplicationController
     flash[:notice] = "Your offer was removed successfully"
     redirect_to offers_path
   end
-
 
   private
 

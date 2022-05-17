@@ -1,6 +1,12 @@
 <ul>
   <% @offers.each do |offer| %>
     <li><%= offer.address %></li>
+    <td><% if policy(offer).update? %>
+              <%= link_to "Edit", edit_offer_path(offer) %>
+        <% end %></td>
+    <td><% if policy(offer).update? %>
+              <%= link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %></td>
   <% end %>
 </ul>
 
