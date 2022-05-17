@@ -1,7 +1,95 @@
-<ul>
-  <% @offers.each do |offer| %>
-    <li><%= offer.address %></li>
-  <% end %>
-</ul>
+<div class="columns is-mobile searchcolumns">
+  <div class="column is-two-thirds-widescreen is-three-fifths-desktop is-full-mobile">
+    <div class="container is-fluid searchwrap mb-5">
+      <% if @stays.any? %>
+        <ul class="ull">
+          <li><%= pluralize(@stays.length, ' stay') %></li>
+          <% if !@checkin.blank? || !@checkout.blank? %>
+            <li><i class="fa fa-circle la"></i><%= @checkin %> - <%= @checkout %></li>
+          <% end %>
+          <% if !@guests.blank? %>
+            <li><i class="fa fa-circle la"></i><%= pluralize(@guests, ' guest') %></li>
+          <%end %>
+        </ul>
+        <h1 class="is-size-3 has-text-weight-bold mb-5">
+          Stays in <%= @city %>
+        </h1>
+        <% @stays.each_with_index do |offer, index| %>
+          <% if @stays.size > 1 && index > 0 %>
+            <hr style="margin: 2vh 0 !important;">
+          <% end %>
+          <article class="media">
+            <div class="media-left">
+              <% if offer.length > 0 %>
+                <%= image_tag offer, class: "searchimg" %>
+              <% end %>
+            </div>
+            <div class="media-content">
+              <span class="is-size-6"><%#= offer.home_type %> in <%= offer.city %></span>
+              <h3 class="is-size-4 has-text-weight-semibold"><%= link_to offer.title, offer_path(offer), class: "offerlink" %></h3>
+              <hr>
+              <ul class="ull">
+                <li><%= pluralize(offer.capacity, ' guest') %></li>
 
-<h1>Teste</h1>
+              </ul>
+              <h2 class="is-size-5 mt-4"><strong><i class="fa fa-rupee mr-1"></i><%= offer.price %></strong> / night</h2>
+            </div>
+          </article>
+        <% end %>
+      <%# else %>
+        <div class="container is-fluid searchwrap">
+          <ul class="ull">
+            <li><%#= pluralize(@offers.length, ' stay') %></li>
+          </ul>
+          <h1 class="is-size-3 has-text-weight-bold mb-5">
+            Stays around the world
+          </h1>
+          <%# @offers.each_with_index do |offer, index| %>
+            <%# if index > 0 %>
+              <hr style="margin: 2vh 0 !important;">
+            <%# end %>
+            <article class="media">
+              <div class="media-left">
+                <%#= image_tag room.urls.first, class: "searchimg" %>
+              </div>
+              <div class="media-content">
+                <span class="is-size-6"><%#= offer.home_type %> in <%#= offer.city %></span>
+                <h3 class="is-size-4 has-text-weight-semibold"><%#= link_to offer.title, offer_path(offer), class: "offerlink" %></h3>
+                <hr>
+                <ul class="ull">
+                  <li><%#= pluralize(offer.capacity, ' guest') %></li>
+
+
+                </ul>
+                <h2 class="is-size-5 mt-4"><strong><i class="fa fa-rupee mr-1"></i><%#= offer.price %></strong> / night</h2>
+              </div>
+            </article>
+          <%# end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="column">
+    <aside class="map">
+      <div id="map">
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mapCanvas = document.getElementById('map');
+    const mapOptions = {
+      center: new google.maps.LatLng(<%#= @result.first.coordinates[0] %>, <%#= @result.first.coordinates[1] %>),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    const map = new google.maps.Map(mapCanvas, mapOptions);
+
+    const marker = new google.maps.Marker({
+      position: new google.maps.LatLng(<%#= @result.first.coordinates[0] %>, <%#= @result.first.coordinates[1] %>)
+    });
+    marker.setMap(map);
+  });
+</script>

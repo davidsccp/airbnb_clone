@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="container is-fluid">
+    <h1 class="is-size-1 has-text-centered has-text-weight-semibold mb-6">Your Offers</h1>
+    <% if @offers.any? %>
+      <% @offers.each do |offer| %>
+        <article class="media">
+
+          <div class="media-content">
+            <span class="is-size-5"><%= offer.state %> in <%= offer.city %></span>
+            <h3 class="is-size-3 has-text-weight-semibold"><%= link_to offer.title, offer_path(offer), class: "offerlink" %></h3>
+            <hr>
+            <ul class="ul">
+              <li><%= pluralize(offer.capacity, ' guest') %></li>
+
+            </ul>
+            <h2 class="is-size-5 mt-4"><strong><i class="fa fa-rupee mr-1"></i><%= offer.price %></strong> / night</h2>
+            <div class="field is-grouped" style="margin-top: 14vh;">
+              <p class="control">
+                <%= link_to "Update your space", edit_offer_path(offer), class:"button is-small has-text-weight-semibold" %>
+              </p>
+              <p class="control">
+                <%= link_to "Remove your space", offer_path(offer), method: :delete, data: {confirm: "Are you sure?"}, class:"button is-warning is-small has-text-weight-semibold" %>
+              </p>
+            </div>
+          </div>
+        </article>
+        <hr style="margin: 2vh 0 !important;">
+      <% end %>
+    <% else %>
+      <div class="nothing" style="margin-bottom: 28vh; margin-top: 20vh;">
+        <h1 style="font-size:2.5rem; text-align:center;">You have no space listed, go on</h1>
+        <%= link_to "List your space", new_offer_path, class:"button is-link mt-5 listspacebtn", style: "left: 45%"%>
+      </div>
+    <% end %>
+  </div>
+</div>

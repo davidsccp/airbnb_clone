@@ -4,7 +4,7 @@ class OffersController < ApplicationController
 
 
   def index
-    @offers = policy_scope(Offer).order(created_at: :desc)
+   @offers = Offer.all || Offer.where(city: params[:city])
   end
 
   def new

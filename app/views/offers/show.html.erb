@@ -1,0 +1,64 @@
+<div class="wrapper">
+  <div class="container is-fluid space">
+    <h1 class="is-size-2 has-text-weight-semibold"><%= @offer.title %></h1>
+    <h4 class="is-size-5 mb-4" style="text-decoration: underline;"><%= @offer.city %></h4>
+    <%# <div class="room-images">
+      <div>
+        <% if @offer.urls.length > 0 %>
+          <%# <%= image_tag @offer, class: "show-room-img main-img"%> %>
+        <%# <% end %> %>
+      </div> %>
+      <div class="stack-images">
+        <% @offer.urls.each_with_index do |url, index| %>
+          <% if index != 0 %>
+            <div>
+              <%= image_tag url, class: "show-room-img stack-img"%>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="columns is-mobile mt-5 desc-column">
+      <div class="column is-two-thirds-widescreen is-full-desktop is-full-mobile">
+        <h2 class="is-size-3 has-text-weight-semibold" style="display: inline-block !important;">
+          <%= @offer.city.capitalize %> hosted by <%= @offer.user.email.split('@')[0] %>
+        </h2>
+        <span class="avatar"><img src="https://img.icons8.com/bubbles/80/000000/user-male.png"/></span>
+        <ul class="ul" style="margin-bottom: 4vh !important;">
+          <li><%= pluralize(@offer.capacity, ' guest') %></li>
+
+        </ul>
+        <hr>
+        <p class="description mb-3">
+          <%= @offer.title %>
+        </p>
+        <a id="readlink" class="continue_google has-text-weight-semibold">Read more</a>
+        <h4 class="mt-4 mb-5">
+          <span class="has-text-weight-semibold continue_google" id="readlink">Contact email</span><span style="font-size: 17px !important;">: <%= current_user.email %></span>
+        </h4>
+        <hr>
+
+
+    </div>
+    <div class="card mapcard">
+      <div id="mapp">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mapCanvas = document.getElementById('mapp');
+    const mapOptions = {
+      center: new google.maps.LatLng(<%= @offer.latitude %>, <%= @offer.longitude %>),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    const map = new google.maps.Map(mapCanvas, mapOptions);
+
+    const marker = new google.maps.Marker({
+      position: new google.maps.LatLng(<%= @offer.latitude %>, <%= @offer.longitude %>)
+    });
+    marker.setMap(map);
+  });
+</script>

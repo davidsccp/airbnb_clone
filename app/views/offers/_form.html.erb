@@ -1,0 +1,93 @@
+<div id="form">
+  <%= form_for(@offer) do |f| %>
+    <div class="columns mt-4 is-mobile change-mobile">
+      <div class="column is-two-fifths-mobile is-one-third-desktop is-one-third-widescreen change-column" style="width:auto !important;">
+        <div class="field">
+          <label class="label">Offer</label>
+          <div class="control">
+            <div class="select">
+              <%= f.select(:home_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]])) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <
+      <div class="column is-two-fifths-mobile is-one-third-desktop is-one-third-widescreen change-column">
+        <div class="field">
+          <label class="label">How many guests</label>
+          <div class="control">
+            <div class="select">
+              <%= f.select(:capacity, options_for_select([["for 1 guest", 1], ["for 2 guests", 2], ["for 3 guests", 3], ["for 4 guests", 4], ["for 5 guests", 5], ["for 6 guests", 6]])) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns mt-3 is-mobile change-mobile">
+      <div class="column">
+        <div class="field">
+          <label class="label">Offer Title</label>
+          <div class="control">
+            <%= f.text_field :title, class: "input", placeholder: "Be clear and descriptive" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns mt-3 is-mobile change-mobile">
+      <div class="column is-half-widescreen is-half-desktop">
+        <div class="field">
+          <label class="label">City</label>
+          <div class="control">
+            <%= f.text_field :city, class: "input", placeholder: "Enter your city" %>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half-widescreen is-half-desktop">
+        <div class="field">
+          <label class="label">State</label>
+          <div class="control">
+            <%= f.text_field :state, class: "input", placeholder: "Enter your state" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns mt-3 is-mobile change-mobile">
+      <div class="column">
+        <div class="field">
+          <label class="label">Address</label>
+          <div class="control">
+            <%= f.text_field :address, class: "input", placeholder: "What is your address?" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns mt-3 is-mobile change-mobile">
+      <div class="column">
+        <div class="field">
+          <label class="label">Price</label>
+          <div class="control has-icons-left">
+            <%= f.text_field :price, class: "input", placeholder: "xxxx" %>
+            <span class="icon is-left"><i class="fa fa-rupee", style="color: rgb(23, 23, 23);"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns mt-3 is-mobile change-mobile">
+      <div class="column">
+        <div class="field">
+          <label class="label">Add Images<span style="color: #ff5b5b; font-size: 0.8rem;"> (Add atleast 5 images)</span></label>
+          <div class="control">
+            <input placeholder="Url 1" type="text" name="offer[urls][]" class="input">
+            <input placeholder="Url 2" type="text" name="offer[urls][]" class="input">
+            <input placeholder="Url 3" type="text" name="offer[urls][]" class="input">
+            <input placeholder="Url 4" type="text" name="offer[urls][]" class="input">
+            <input placeholder="Url 5" type="text" name="offer[urls][]" class="input">
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'images' %>
+    <%= f.submit @offer.persisted? ? "Update your offer" : "Create your offer", class: "button is-dark mt-5 chng" %>
+  <% end %>
+</div>

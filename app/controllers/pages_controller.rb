@@ -7,13 +7,14 @@ class PagesController < ApplicationController
   def search
     @address = params[:address]
     @state = params[:state]
+    @home_type = params[:home_type]
     @city = params[:city]
     @checkin = params[:checkin]
     @checkout = params[:checkout]
     @guests = params[:guests] || 1
-    # @stays = Room.search(@location)
+    # @stays = Offer.search(@city)
     # if @stays.blank?
-     #  @rooms = Rooms.all
+     #  @offers = Offers.all
 end
 
 end
