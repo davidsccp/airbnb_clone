@@ -4,7 +4,11 @@ class OffersController < ApplicationController
 
 
   def index
-    @offers = policy_scope(Offer).order(created_at: :desc)
+    if params[:query].present?
+      @offers = policy_scope(Offer).search_by_title_city_state_address_and_description(params[:query]).order(created_at: :desc)
+    else
+      @offers = policy_scope(Offer).order(created_at: :desc)
+    end
   end
 
   def new
