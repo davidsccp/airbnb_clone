@@ -1,6 +1,9 @@
 <ul>
   <% @offers.each do |offer| %>
     <li><%= offer.address %></li>
+    <td><% if policy(offer).show? %>
+              <%= link_to "Show", offer_path(offer) %>
+        <% end %></td>
     <td><% if policy(offer).update? %>
               <%= link_to "Edit", edit_offer_path(offer) %>
         <% end %></td>
@@ -9,5 +12,3 @@
         <% end %></td>
   <% end %>
 </ul>
-
-<h1>Teste</h1>

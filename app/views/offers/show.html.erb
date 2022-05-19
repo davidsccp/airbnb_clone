@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container is-fluid space">
+    <h5 class="is-size-5 mb-4"><%= link_to "Back to list", offers_path %></h5>
     <h1 class="is-size-2 has-text-weight-semibold"><%= @offer.title %></h1>
     <h2 class="is-size-2 has-text-weight-semibold"><%= "R$#{@offer.price},00/night" %></h2>
     <h4 class="is-size-5 mb-4" style="text-decoration: underline;"><%= "#{@offer.city}, #{@offer.state}" %></h4>
