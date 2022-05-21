@@ -24,6 +24,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat1.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -36,6 +38,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat2.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -48,6 +52,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat3.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -64,6 +70,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat4.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -76,6 +84,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat5.jpg"
+
 )
 
 puts "offer #{offer.id} is created"
@@ -91,6 +101,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat6.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -103,6 +115,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat7.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -119,6 +133,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat8.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -137,6 +153,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat9.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
@@ -151,6 +169,8 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
+  photo: "flat10.jpg"
+
 )
 puts "offer #{offer.id} is created"
 
