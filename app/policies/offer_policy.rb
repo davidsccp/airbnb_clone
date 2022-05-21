@@ -29,6 +29,6 @@ class OfferPolicy < ApplicationPolicy
   private
 
   def owner_admin?
-    user == record.user || user.admin
+    user == record.user
   end
 end
