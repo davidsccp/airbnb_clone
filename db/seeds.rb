@@ -24,7 +24,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat1.jpg"
+  photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159765996.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -38,7 +38,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat2.jpg"
+  photo: "https://cf.bstatic.com/images/hotel/max1280x900/175/175477013.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -52,7 +52,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat3.jpg"
+  photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921701.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -70,7 +70,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat4.jpg"
+  photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921614.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -84,7 +84,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat5.jpg"
+  photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921591.jpg"
 
 )
 
@@ -101,7 +101,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat6.jpg"
+  photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fd/2a.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -115,7 +115,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat7.jpg"
+  photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fc/29.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -133,7 +133,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat8.jpg"
+  photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fc/8d.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -153,7 +153,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat9.jpg"
+  photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/03/5a/ef/a1.jpg"
 
 )
 puts "offer #{offer.id} is created"
@@ -169,7 +169,7 @@ offer = Offer.create(
   state: "SP",
   city: "São Paulo",
   user_id: 1
-  photo: "flat10.jpg"
+  photo: "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF12908/SF12908006.jpg?1560351263"
 
 )
 puts "offer #{offer.id} is created"
