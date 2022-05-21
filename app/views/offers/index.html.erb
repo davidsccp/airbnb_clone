@@ -1,14 +1,18 @@
-<ul>
-  <% @offers.each do |offer| %>
-    <li><%= offer.address %></li>
-    <td><% if policy(offer).show? %>
-              <%= link_to "Show", offer_path(offer) %>
-        <% end %></td>
-    <td><% if policy(offer).update? %>
-              <%= link_to "Edit", edit_offer_path(offer) %>
-        <% end %></td>
-    <td><% if policy(offer).update? %>
-              <%= link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %></td>
-  <% end %>
-</ul>
+<div class="container d-flex justify-content-around">
+  <div class="col-8">
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer) do %>
+        <div class="card-trip mb-5">
+          <%= image_tag offer.photo %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= offer.title %></h2>
+              <p><%= offer.description %></p>
+            </div>
+            <h1 class="card-trip-user">R$<%= offer.price %></h1>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
