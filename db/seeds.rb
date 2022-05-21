@@ -23,7 +23,7 @@ offer = Offer.create(
   title: "Quarto inteiro em condomínio",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159765996.jpg"
 
 )
@@ -37,7 +37,7 @@ offer = Offer.create(
   title: "Estúdio no Centro, a passos da Rua 25 de Março",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://cf.bstatic.com/images/hotel/max1280x900/175/175477013.jpg"
 
 )
@@ -51,7 +51,7 @@ offer = Offer.create(
   title: "Conforto e bem localizado",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921701.jpg"
 
 )
@@ -69,7 +69,7 @@ offer = Offer.create(
   title: "Studio moderno no centro de tudo",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921614.jpg"
 
 )
@@ -83,7 +83,7 @@ offer = Offer.create(
   title: "Aconchegante suite em ótima localização",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://cf.bstatic.com/images/hotel/max1280x900/159/159921591.jpg"
 
 )
@@ -100,7 +100,7 @@ offer = Offer.create(
   title: "Viva no Centro onde tudo acontece",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fd/2a.jpg"
 
 )
@@ -114,7 +114,7 @@ offer = Offer.create(
   title: "Quarto c/ banheiro,Jardins,2 quadras Paulista e HC",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fc/29.jpg"
 
 )
@@ -132,7 +132,7 @@ offer = Offer.create(
   title: "Aconchegante! 3 min. metrô,10min.Shop.Higienópolis",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/32/fc/8d.jpg"
 
 )
@@ -152,7 +152,7 @@ offer = Offer.create(
   title: "Studio moderno no centro de tudo",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://media-cdn.tripadvisor.com/media/vr-splice-j/03/5a/ef/a1.jpg"
 
 )
@@ -168,7 +168,7 @@ offer = Offer.create(
   title: "Há 10 minutos (a pe) da avenida Paulista",
   state: "SP",
   city: "São Paulo",
-  user_id: 1
+  user_id: 1,
   photo: "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF12908/SF12908006.jpg?1560351263"
 
 )
