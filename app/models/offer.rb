@@ -5,7 +5,7 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_many :transactions
 
-  validates :address, :price, :description, :capacity, :title, presence: true
+  validates :address, :price, :description, :capacity, :title, :photo, presence: true
 
   def offer_address
     [city, state].compact.join(', ')

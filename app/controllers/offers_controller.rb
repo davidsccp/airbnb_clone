@@ -72,7 +72,7 @@ class OffersController < ApplicationController
       :address, :capacity,
       :city, :description,
       :state,
-      :title, :price
+      :title, :price, :photo
     )
   end
 end
